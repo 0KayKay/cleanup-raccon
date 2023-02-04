@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityAtoms.BaseAtoms;
+using UnityEngine;
 
 [RequireComponent(typeof(InputReader))]
 [RequireComponent(typeof(Animator))]
@@ -6,12 +7,12 @@
 public class PlayerStateMachine : StateMachine
 {
     public Vector3 Velocity;
-    public float MovementSpeed { get; private set; } = 5f;
-    public float JumpForce { get; private set; } = 5f;
+    public FloatVariable MovementSpeed;
+    public FloatVariable JumpForce;
     public float LookRotationDampFactor { get; private set; } = 10f;
     public Transform MainCamera { get; private set; }
     public InputReader InputReader { get; private set; }
-    public Animator Animator { get; private set; }
+    public Animator Animator;
     public CharacterController Controller { get; private set; }
 
     public PlayerRaccoonScript playerRaccoonScript;
@@ -21,9 +22,9 @@ public class PlayerStateMachine : StateMachine
         MainCamera = Camera.main.transform;
 
         InputReader = GetComponent<InputReader>();
-        Animator = GetComponent<Animator>();
+       
         Controller = GetComponent<CharacterController>();
 
-        SwitchState(new PlayerMoveState(this));
+        SwitchState(new PlayerIdleState(this));
     }
 }

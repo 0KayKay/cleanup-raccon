@@ -2667,6 +2667,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocity: {x: 0, y: 0, z: 0}
+  MovementSpeed: {fileID: 11400000, guid: 8c9cbf00c0a94ef458cea5791af8074c, type: 2}
+  JumpForce: {fileID: 11400000, guid: e945240c5bca3594c91b60ac34e76270, type: 2}
+  Animator: {fileID: 662376860}
   playerRaccoonScript: {fileID: 262395444}
 --- !u!95 &262395449
 Animator:
@@ -2678,7 +2681,7 @@ Animator:
   m_GameObject: {fileID: 262395443}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fc97b1c298125104c956ab8ab66b13fe, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7361,6 +7364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 662376858}
   - component: {fileID: 662376859}
+  - component: {fileID: 662376860}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -7435,6 +7439,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &662376860
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662376857}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fc97b1c298125104c956ab8ab66b13fe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &672953367
 PrefabInstance:
   m_ObjectHideFlags: 0

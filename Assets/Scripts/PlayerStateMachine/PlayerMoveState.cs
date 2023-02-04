@@ -2,8 +2,7 @@
 
 public class PlayerMoveState : PlayerBaseState
 {
-    private readonly int MoveSpeedHash = Animator.StringToHash("MoveSpeed");
-    private readonly int MoveBlendTreeHash = Animator.StringToHash("MoveBlendTree");
+    private readonly int MoveSpeedHash = Animator.StringToHash("Raccoon_Run_Front");
     private const float AnimationDampTime = 0.1f;
     private const float CrossFadeDuration = 0.1f;
 
@@ -13,7 +12,8 @@ public class PlayerMoveState : PlayerBaseState
     {
         stateMachine.Velocity.y = Physics.gravity.y;
 
-        stateMachine.Animator.CrossFadeInFixedTime(MoveBlendTreeHash, CrossFadeDuration);
+        //stateMachine.Animator.CrossFadeInFixedTime(MoveBlendTreeHash, CrossFadeDuration);
+        stateMachine.Animator.Play(MoveSpeedHash);
 
         stateMachine.InputReader.OnJumpPerformed += SwitchToJumpState;
     }

@@ -9,7 +9,7 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void Enter()
     {
-        stateMachine.Velocity = new Vector3(stateMachine.Velocity.x, stateMachine.JumpForce, stateMachine.Velocity.z);
+        stateMachine.Velocity = new Vector3(stateMachine.Velocity.x, stateMachine.JumpForce.Value, stateMachine.Velocity.z);
 
         stateMachine.Animator.CrossFadeInFixedTime(JumpHash, CrossFadeDuration);
     }
