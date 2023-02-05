@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 942155942324292252}
   - component: {fileID: 1975565491474651762}
   - component: {fileID: 2276470746765850459}
+  - component: {fileID: -4358121952651002885}
   m_Layer: 0
   m_Name: garbage-sheet_7
-  m_TagString: Untagged
+  m_TagString: trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,3 +116,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.4, z: 0.4}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-4358121952651002885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942155942324292255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55def01dfa05ed048b7915b4779a632b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceMagnitude: {fileID: 11400000, guid: f90048e7ba0fd9443af8e74051c06da0, type: 2}
