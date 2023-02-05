@@ -13,6 +13,7 @@ public class PlayerRaccoonScript : MonoBehaviour
     public bool isDigging;
     public float digTime = 0;
     public float digminTime = 3;
+
     public bool TryAddTrashToInventory(TrashItem item)
     {
         if (trashInventory.Count < inventoryLimit.Value)
@@ -51,6 +52,16 @@ public class PlayerRaccoonScript : MonoBehaviour
         {
             Debug.Log("hot"); 
             canDig = true;
+        }
+        if (other.gameObject.tag == "dump")
+        {
+            Debug.Log("dump");
+            foreach (var item in trashInventory)
+            {
+                item.transform.position = transform.position;
+                item.IsTossed();
+
+            }
         }
     }
 

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - trash
   - stash
+  - dump
   layers:
   - Default
   - TransparentFX

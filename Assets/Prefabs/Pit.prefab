@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4441666575652027912}
   - component: {fileID: 7801007138444422510}
   - component: {fileID: 1429852699619613755}
+  - component: {fileID: 8148124596616531784}
   m_Layer: 0
   m_Name: Pit
-  m_TagString: Untagged
+  m_TagString: stash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,3 +99,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.4
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8148124596616531784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4441666575652027919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37e270d693a0b8418c9223d566e6c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trash:
+  - {fileID: 2864243451386570880, guid: 83c322bca6d4f8f74926e6f05509ac1f, type: 3}
+  - {fileID: 8289799143713752097, guid: 598e0112129541dc09533875969b9953, type: 3}
+  - {fileID: 656623881361784971, guid: 41136b1973569a992a415e33e4eff3fb, type: 3}
+  - {fileID: 2962416650720933019, guid: f5a8b21f1bda6ad56b326422f5f2cbe9, type: 3}
