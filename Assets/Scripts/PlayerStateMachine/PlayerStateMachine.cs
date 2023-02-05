@@ -2,7 +2,6 @@
 using UnityEngine;
 
 [RequireComponent(typeof(InputReader))]
-[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(CharacterController))]
 public class PlayerStateMachine : StateMachine
 {
