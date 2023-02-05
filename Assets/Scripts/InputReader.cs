@@ -6,6 +6,11 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 {
     public Vector2 MoveComposite;
     public Action OnJumpPerformed;
+    public Action OnInteractionPerformed;
+
+    public bool pressF_perfomred;
+    public bool pressF_started;
+    public bool pressF_cancled;
 
     private Controls controls;
 
@@ -35,5 +40,15 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public void OnMove(InputAction.CallbackContext context)
     {
         MoveComposite = context.ReadValue<Vector2>();
+    }
+
+    public void OnInteraction(InputAction.CallbackContext context)
+    {
+        pressF_started = context.started;
+        pressF_perfomred = context.performed;
+        pressF_cancled = context.canceled;
+        if (!pressF_perfomred)
+            return;
+        OnInteractionPerformed?.Invoke();
     }
 }

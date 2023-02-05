@@ -31,6 +31,8 @@ public abstract class PlayerBaseState : State
         {
             stateMachine.playerRaccoonScript.FlipSpriteLeft();
         }
+        float zm = stateMachine.Velocity.z > 0 ? 1 : 0;
+        stateMachine.Animator.SetFloat("ZMovement",zm);
     }
 
     protected void ApplyGravity()
@@ -43,6 +45,8 @@ public abstract class PlayerBaseState : State
 
     protected void Move()
     {
-        stateMachine.Controller.Move(stateMachine.Velocity * Time.deltaTime);
+        var movement = stateMachine.Velocity ;
+        stateMachine.Controller.Move(movement * Time.deltaTime);
+        stateMachine.Animator.SetFloat("Movement", Mathf.Abs(movement.x)+Mathf.Abs(movement.z));
     }
 }

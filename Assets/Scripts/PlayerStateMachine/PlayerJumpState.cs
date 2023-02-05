@@ -2,7 +2,7 @@
 
 public class PlayerJumpState : PlayerBaseState
 {
-    private readonly int JumpHash = Animator.StringToHash("Jump");
+    private readonly int JumpStartHash = Animator.StringToHash("Raccoon_Jump_Start_Front");
     private const float CrossFadeDuration = 0.1f;
 
     public PlayerJumpState(PlayerStateMachine stateMachine) : base(stateMachine) { }
@@ -11,7 +11,8 @@ public class PlayerJumpState : PlayerBaseState
     {
         stateMachine.Velocity = new Vector3(stateMachine.Velocity.x, stateMachine.JumpForce.Value, stateMachine.Velocity.z);
 
-        stateMachine.Animator.CrossFadeInFixedTime(JumpHash, CrossFadeDuration);
+        stateMachine.Animator.SetTrigger("Jump");
+
     }
 
     public override void Tick()

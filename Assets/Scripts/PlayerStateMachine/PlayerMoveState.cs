@@ -2,20 +2,13 @@
 
 public class PlayerMoveState : PlayerBaseState
 {
-    private readonly int MoveSpeedHash = Animator.StringToHash("Raccoon_Run_Front");
-    private const float AnimationDampTime = 0.1f;
-    private const float CrossFadeDuration = 0.1f;
-
     public PlayerMoveState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
         stateMachine.Velocity.y = Physics.gravity.y;
-
-        //stateMachine.Animator.CrossFadeInFixedTime(MoveBlendTreeHash, CrossFadeDuration);
-        stateMachine.Animator.Play(MoveSpeedHash);
-
         stateMachine.InputReader.OnJumpPerformed += SwitchToJumpState;
+        stateMachine.InputReader.OnInteractionPerformed += SwitchToInteractionState;
     }
 
     public override void Tick()
@@ -28,17 +21,21 @@ public class PlayerMoveState : PlayerBaseState
         CalculateMoveDirection();
         FaceMoveDirection();
         Move();
-
-        stateMachine.Animator.SetFloat(MoveSpeedHash, stateMachine.InputReader.MoveComposite.sqrMagnitude > 0f ? 1f : 0f, AnimationDampTime, Time.deltaTime);
     }
 
     public override void Exit()
     {
         stateMachine.InputReader.OnJumpPerformed -= SwitchToJumpState;
+        stateMachine.InputReader.OnInteractionPerformed -= SwitchToInteractionState;
     }
 
     private void SwitchToJumpState()
     {
         stateMachine.SwitchState(new PlayerJumpState(stateMachine));
     }
+    private void SwitchToInteractionState()
+    {
+        stateMachine.SwitchState(new PlayerInteractionState(stateMachine));
+    }
+
 }

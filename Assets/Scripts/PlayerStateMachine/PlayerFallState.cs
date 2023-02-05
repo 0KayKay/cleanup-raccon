@@ -2,16 +2,12 @@
 
 public class PlayerFallState : PlayerBaseState
 {
-    private readonly int FallHash = Animator.StringToHash("Raccoon_Scare");
-    private const float CrossFadeDuration = 0.1f;
-
     public PlayerFallState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
         stateMachine.Velocity.y = 0f;
-        //stateMachine.Animator.CrossFadeInFixedTime(FallHash, CrossFadeDuration);
-        stateMachine.Animator.Play(FallHash);
+        stateMachine.Animator.SetBool("Falling", true);
 
     }
 
@@ -26,5 +22,7 @@ public class PlayerFallState : PlayerBaseState
         }
     }
 
-    public override void Exit() { }
+    public override void Exit() {
+        stateMachine.Animator.SetBool("Falling", false);
+    }
 }
